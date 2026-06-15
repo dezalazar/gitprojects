@@ -1,0 +1,4 @@
+apiVersion: v1
+kind: Namespace
+metadata:
+  name: placeholder-ns # Kustomize va a reemplazar esto después con dev, stg o prd
