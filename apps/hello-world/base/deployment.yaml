@@ -14,13 +14,13 @@ spec:
     spec:
       containers:
       - name: web-container
+        # 🚀 CAMBIAMOS ESTA IMAGEN POR UNA MODERNA Y ESTABLE:
         image: nginx:alpine
         ports:
         - containerPort: 80
-        # 🚀 AGREGAMOS ESTO: Inyectamos el ConfigMap como Variable de Entorno
         env:
         - name: PROMPT_MESSAGE
           valueFrom:
             configMapKeyRef:
-              name: app-messages  # Kustomize se encargará de cambiar este nombre por el que tiene el hash dinámico
+              name: app-messages
               key: MESSAGE
